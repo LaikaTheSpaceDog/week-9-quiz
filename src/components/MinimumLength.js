@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Form, Alert } from "react-bootstrap";
+
 
 class MinimumLength extends Component {
 
@@ -29,11 +31,11 @@ class MinimumLength extends Component {
 
         return (
             <>
-                <h2>Minimum Length Challenge</h2>
-                <form>
-                    <input onChange={ this.handleChange } value={ input }></input>
-                </form>
-                <p>{ this.alert() }</p>
+                <Form>
+                    <Form.Label>Minimum Length Challenge</Form.Label>
+                    <Form.Control onChange={ this.handleChange } value={ input }></Form.Control>
+                </Form>
+                <Alert variant="primary">{ this.alert() }</Alert>
             </>
         );
     }

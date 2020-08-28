@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card } from "react-bootstrap";
 
 class Multiplier extends Component {
 
@@ -7,10 +8,12 @@ class Multiplier extends Component {
         const { x, y } = this.props; 
         
         return (
-            <>
-                <h2>Multiplier Challenge</h2>
-                <p>{ x  * y }</p>
-            </>
+            <Card>
+                <Card.Header>Multiplier Challenge</Card.Header>
+                <Card.Body onClick={ this.handleClick }>
+                    <Card.Text>{ x * y }</Card.Text>
+                </Card.Body>
+            </Card>
         );
     }
 }

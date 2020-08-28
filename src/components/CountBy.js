@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card } from "react-bootstrap";
 
 class CountBy extends Component {
 
@@ -22,10 +23,12 @@ class CountBy extends Component {
         const { count } = this.state;
 
         return (
-            <>
-                <h2>Count By Challenge</h2>
-                <p onClick={ this.handleClick }>{ count }</p>
-            </>
+            <Card>
+                <Card.Header>Count By Challenge</Card.Header>
+                <Card.Body onClick={ this.handleClick }>
+                    <Card.Text>{ count }</Card.Text>
+                </Card.Body>
+            </Card>
         );
     }
 }

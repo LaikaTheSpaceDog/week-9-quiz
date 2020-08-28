@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card } from "react-bootstrap";
 
 class HideMe extends Component {
 
@@ -21,11 +22,13 @@ class HideMe extends Component {
         const { toggled } = this.state;
 
         return (
-            <>
-                <h2>Hide Me Challenge</h2>
-                {(toggled === false) ? <p onClick={ this.handleClick}>{ children }</p> :
-                <p onClick={ this.handleClick }>Nothing to see here...</p>}
-            </>
+            <Card>
+                <Card.Header>Even Clicks Challenge</Card.Header>
+                <Card.Body onClick={ this.handleClick }>
+                    {(toggled === false) ? <Card.Text onClick={ this.handleClick}>{ children }</Card.Text> :
+                    <Card.Text onClick={ this.handleClick }>Nothing to see here...</Card.Text>}
+                </Card.Body>
+            </Card>
         );
     }
 }

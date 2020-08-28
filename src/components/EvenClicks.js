@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card } from "react-bootstrap";
 
 class EvenClicks extends Component {
 
@@ -21,11 +22,13 @@ class EvenClicks extends Component {
         let { total } = this.state;
         
         return (
-            <>
-                <h2>Even Clicks Challenge</h2>
-                {(total % 2 === 0) ? <p onClick={ this.handleClick}>Even</p> :
-                <p onClick={ this.handleClick }>Odd</p>}
-            </>
+            <Card>
+                <Card.Header>Even Clicks Challenge</Card.Header>
+                <Card.Body onClick={ this.handleClick }>
+                    {(total % 2 === 0) ? <Card.Text onClick={ this.handleClick}>Even</Card.Text> :
+                    <Card.Text onClick={ this.handleClick }>Odd</Card.Text>}
+                </Card.Body>
+            </Card>
         );
     }
 }
