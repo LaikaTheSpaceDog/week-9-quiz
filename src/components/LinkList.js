@@ -3,26 +3,21 @@ import { Nav } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
+let linkArray = [ {title:"Home" , path: "/"}, 
+                  {title: "Multiplier", path: "/multiplier"},
+                  {title: "Even Clicks", path: "/even-clicks"},
+                  {title: "Count by", path: "/count-by"},
+                  {title: "Hide Me", path: "/hide-me"},
+                  {title: "Minimum Length", path: "/min-length"}
+                ]
+
 const LinkList = () => (
     <Nav>
-        <Nav.Item>
-            <Link className="nav-link" to="/">Home</Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Link className="nav-link" to="/multiplier">Multiplier</Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Link className="nav-link" to="/even-clicks">Even Clicks</Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Link className="nav-link" to="/count-by">Count By</Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Link className="nav-link" to="/hide-me">Hide Me</Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Link className="nav-link" to="/min-length">Minimum Length</Link>
-        </Nav.Item>
+        {linkArray.map((x, i) => (
+            <Nav.Item key={i}>
+                <Link className="nav-link" to={x.path}>{ x.title }</Link>
+            </Nav.Item>
+        ))}
     </Nav>
 );
 
