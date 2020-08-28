@@ -17,7 +17,7 @@ class MinimumLength extends Component {
     }
 
     alert() {
-        if (this.state.input.length < this.props.long) {
+        if (this.state.input.length < this.props.length) {
             return "Too short!"
         } else {
             return "All good!"
