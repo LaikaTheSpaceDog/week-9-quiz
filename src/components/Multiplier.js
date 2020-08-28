@@ -4,11 +4,11 @@ class Multiplier extends Component {
 
     render() {
 
-        let { x } = this.props; 
-        let { y } = this.props;
+        const { x, y } = this.props; 
         
         return (
             <>
+                <h2>Multiplier Challenge</h2>
                 <p>{ x  * y }</p>
             </>
         );
